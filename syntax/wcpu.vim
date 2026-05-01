@@ -18,10 +18,13 @@ syn match wcpuConstant "^\s*\w\+\s*=" contains=wcpuConstName
 syn match wcpuConstName "\w\+" contained
 
 " Instructions
-syn keyword wcpuKeyword nop hlt out add sub cmp
-syn keyword wcpuKeyword lsp lda ldb ldx sta stb stx
-syn keyword wcpuKeyword pusha popa pushb popb pushx popx
-syn keyword wcpuKeyword jmp jsr rts jc jnc jz jnz jv jnv
+syn keyword wcpuKeyword nop out outa outb outx outg
+syn keyword wcpuKeyword tax txa tab tba tag tga tsx txs
+syn keyword wcpuKeyword lsp
+syn keyword wcpuKeyword add addb addx addg sub subb subx subg cmp cmpb cmpx cmpg
+syn keyword wcpuKeyword lda ldb ldx ldg sta stb stx stg
+syn keyword wcpuKeyword jmp jsr rts jc jnc jz jnz
+syn keyword wcpuKeyword pha pla phb plb phx plx phg plg
 
 " Immediate prefix: # before $hex or constant name (orange #, value keeps its own color)
 syn match wcpuImmediatePrefix "#\ze[\$a-zA-Z_]" contains=NONE
